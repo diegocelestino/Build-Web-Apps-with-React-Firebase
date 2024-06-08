@@ -1,37 +1,28 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// page components
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import Home from './pages/home/Home'
-import Create from './pages/create/Create'
 import Search from './pages/search/Search'
+import Create from './pages/create/Create'
 import Recipe from './pages/recipe/Recipe'
-
-// styles
-import './App.css'
 
 function App() {
   return (
     <div className="App">
+
       <BrowserRouter>
-      <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/recipes/:id">
-            <Recipe />
-          </Route>
-        </Switch>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/recipes/:id" element={<Recipe />} />
+        </Routes>      
       </BrowserRouter>
+     
     </div>
   );
 }
 
-export default App
+export default App;
