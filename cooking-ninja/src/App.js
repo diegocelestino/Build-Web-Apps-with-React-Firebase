@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import Search from './pages/search/Search'
 import Create from './pages/create/Create'
 import Recipe from './pages/recipe/Recipe'
+import ThemeSelector from './components/ThemeSelector';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <BrowserRouter>
         <Navbar />
+        <ThemeSelector />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
